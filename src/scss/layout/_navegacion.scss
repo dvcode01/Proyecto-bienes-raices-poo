@@ -1,0 +1,92 @@
+.barra{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include tablet{
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+    }
+
+    .logo-header {
+        width: 28rem;
+        @include tablet{
+            height: auto;
+        }
+    }
+}
+
+.menu-derecha{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    @include tablet{
+        align-items: flex-end;
+    }
+
+    .btn-mode{
+        width: 3rem;
+        margin-top: 3rem;
+        margin-bottom: 2rem;
+        filter: invert(100%);
+
+        &:hover{
+            cursor: pointer;
+        }
+
+        @include tablet{
+            margin-top: 0;
+        }
+    }
+}
+
+.navegacion{
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility 0.3s ease-in-out, opacity 0.5s linear, height .5s linear;
+
+    @include tablet{
+        opacity: 1;
+        display: flex;
+        visibility: visible;
+        align-items: center;
+        gap: 20px;
+    }
+
+    a{
+        color: $blanco;
+        font-size: 1.8rem;
+        display: block;
+        text-align: center;
+        text-decoration: none;
+
+        @include tablet{
+            &:nth-child(1){
+                margin-left: 2rem;
+            }
+        }
+
+        &:hover{
+            color: $verde;
+        }
+    }
+}
+
+// Menu de navegacion
+.mobile-menu{
+    @include tablet{
+        display: none;
+    }
+
+    img{
+        width: 5rem;
+    }
+}
+
+.mostrar{
+    opacity: 1;
+    height: auto;
+    visibility: visible;
+}
